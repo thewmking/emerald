@@ -7,7 +7,16 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
+    
+    <%= vite_client_tag %>
+    <%=
+      # vite_ruby installs this but it's broken as of 2024-02-08
+      # only needed if you want to use importmaps rather than npm packages
+      #javascript_importmap_tags
+    %>
+    <%= vite_javascript_tag 'application' %>
+    
+
   </head>
 
   <body>
