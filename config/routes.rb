@@ -11,4 +11,6 @@ Rails.application.routes.draw do
   namespace :api do
     get '/random_number', to: "example#random_number"
   end
+
+  get '*catchall', to: 'home#index', via: :html
 end
